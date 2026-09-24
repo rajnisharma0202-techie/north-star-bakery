@@ -36,23 +36,26 @@
             <h2>Send an Inquiry or Pre-Order Request</h2>
             <p>Use this form to ask a general question or tell us what you would like to pre-order. We will use your contact information to follow up about details and availability.</p>
 
-            <form method="post">
+            <form id="preorder-form" method="post" novalidate>
                 <fieldset>
                     <legend>Customer and Request Information</legend>
 
                     <p>
                         <label for="customer-name">Name:</label><br>
-                        <input type="text" id="customer-name" name="customer-name" required minlength="2" pattern="[A-Za-z .'-]{2,}" autocomplete="name">
+                        <input type="text" id="customer-name" name="customer-name" required minlength="2" pattern="[A-Za-z .'-]{2,}" autocomplete="name" aria-describedby="customer-name-error">
+                        <span class="error-message" id="customer-name-error"></span>
                     </p>
 
                     <p>
                         <label for="email">Email:</label><br>
-                        <input type="email" id="email" name="email" required autocomplete="email">
+                        <input type="email" id="email" name="email" required autocomplete="email" aria-describedby="email-error">
+                        <span class="error-message" id="email-error"></span>
                     </p>
 
                     <p>
                         <label for="pickup-date">Requested pickup date:</label><br>
-                        <input type="date" id="pickup-date" name="pickup-date" required>
+                        <input type="date" id="pickup-date" name="pickup-date" required aria-describedby="pickup-date-error">
+                        <span class="error-message" id="pickup-date-error"></span>
                     </p>
 
                     <p>
@@ -66,7 +69,8 @@
 
                     <p>
                         <label for="item-details">Item details:</label><br>
-                        <textarea id="item-details" name="item-details" rows="5" cols="40" required minlength="5" placeholder="Tell us the item, quantity, size, flavor, or other details."></textarea>
+                        <textarea id="item-details" name="item-details" rows="5" cols="40" required minlength="10" placeholder="Tell us the item, quantity, size, flavor, or other details." aria-describedby="item-details-error"></textarea>
+                        <span class="error-message" id="item-details-error"></span>
                     </p>
 
                     <p>
@@ -75,6 +79,7 @@
                     </p>
 
                     <button type="submit">Submit Request</button>
+                    <p id="form-status" class="form-status" aria-live="polite"></p>
                 </fieldset>
             </form>
         </section>
@@ -96,5 +101,6 @@
             </ul>
         </nav>
     </footer>
+    <script src="script.js" defer></script>
 </body>
 </html>

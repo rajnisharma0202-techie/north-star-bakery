@@ -58,6 +58,40 @@
             <p>For special requests, quantities, or pickup dates, please use our <a href="contact.html">pre-order request form</a>.</p>
         </section>
         </div>
+
+        <section id="favorite-products" class="favorites-panel" aria-labelledby="favorites-heading">
+            <h2 id="favorites-heading">Save Your Bakery Favorites</h2>
+            <p>Save a few items while you browse so you can remember them when you are ready to place a pre-order.</p>
+
+            <div class="favorite-options">
+                <article class="favorite-card">
+                    <h3>Country Sourdough</h3>
+                    <p>Tangy, slow-fermented artisan bread.</p>
+                    <button type="button" data-favorite-id="sourdough" aria-pressed="false">Save favorite</button>
+                </article>
+                <article class="favorite-card">
+                    <h3>Rosemary Sea Salt Bread</h3>
+                    <p>Savory herb loaf finished with sea salt.</p>
+                    <button type="button" data-favorite-id="rosemary" aria-pressed="false">Save favorite</button>
+                </article>
+                <article class="favorite-card">
+                    <h3>Butter Croissant</h3>
+                    <p>Flaky pastry baked fresh each morning.</p>
+                    <button type="button" data-favorite-id="croissant" aria-pressed="false">Save favorite</button>
+                </article>
+                <article class="favorite-card">
+                    <h3>Seasonal Fruit Danish</h3>
+                    <p>Buttery pastry filled with seasonal fruit.</p>
+                    <button type="button" data-favorite-id="danish" aria-pressed="false">Save favorite</button>
+                </article>
+            </div>
+
+            <div class="saved-favorites" aria-live="polite">
+                <h3>Your Saved Favorites (<span id="favorites-count">0</span>)</h3>
+                <ul id="favorites-list"></ul>
+                <p id="favorite-status" class="status-message"></p>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -71,5 +105,6 @@
             </ul>
         </nav>
     </footer>
+    <script src="script.js" defer></script>
 </body>
 </html>
